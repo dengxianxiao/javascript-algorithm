@@ -8,19 +8,19 @@ function TreeNode (val) {
   this.right = null
 }
 /**
- * 递归 前序遍历：1  2  4  5  7  8  3  6
+ * 递归 中序遍历：4  2  7  5  8  1  3  6
  */
 function preorderTraversal1 (node, arr = []) {
   if (node) {
-    arr.push(node.val)
     preorderTraversal1(node.left, arr)
+    arr.push(node.val)
     preorderTraversal1(node.right, arr)
   }
   return arr
 }
 
 /**
- * 迭代 前序遍历：1  2  4  5  7  8  3  6
+ * 迭代
  */
 function preorderTraversal2 (root) {
   let arrNode = []
@@ -28,17 +28,16 @@ function preorderTraversal2 (root) {
   let tmpNode = root // 操作tmpNode, 留着node指向根节点
   while (tmpNode || arrNode.length) {
     if (tmpNode) {
-      arrValue.push(tmpNode.val)
-      arrNode.push(tmpNode)
+      arrNode.push(node)
       tmpNode = tmpNode.left
     } else {
       let node = arrNode.pop()
+      arrValue.push(node.val)
       tmpNode = node.right
     }
   }
   return arrValue
 }
-
 /**
  *
  *          1
