@@ -8,6 +8,10 @@ function TreeNode (val) {
   this.right = null
 }
 
+/**
+ * 二叉树的层次遍历
+ * @param {c} root
+ */
 function levelTraversal (root) {
   if (!root) {
     return
