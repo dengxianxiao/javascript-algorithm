@@ -10,6 +10,7 @@ function TreeNode (val) {
 
 /**
  * 二叉树的层次遍历
+ *
  * @param {c} root
  */
 function levelTraversal (root) {
@@ -20,6 +21,7 @@ function levelTraversal (root) {
   let arrValue = []
   while (arr.length) {
     let node = arr.pop()
+    // 取值
     arrValue.push(node.val)
     if (node.left) {
       arr.unshift(node.left)
